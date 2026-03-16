@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Smart Academic Communication Assistant</title>
+
+<style>
+
+body{
+font-family: Arial, sans-serif;
+background: linear-gradient(135deg,#4facfe,#00f2fe);
+margin:0;
+padding:0;
+}
+
+.container{
+width:600px;
+margin:50px auto;
+background:white;
+padding:30px;
+border-radius:12px;
+box-shadow:0px 10px 25px rgba(0,0,0,0.2);
+}
+
+h1{
+text-align:center;
+color:#333;
+}
+
+label{
+font-weight:bold;
+}
+
+input,select,textarea{
+width:100%;
+padding:10px;
+margin-top:5px;
+margin-bottom:15px;
+border-radius:6px;
+border:1px solid #ccc;
+}
+
+button{
+width:100%;
+padding:12px;
+background:#4facfe;
+border:none;
+color:white;
+font-size:16px;
+border-radius:8px;
+cursor:pointer;
+}
+
+button:hover{
+background:#007bff;
+}
+
+.output{
+background:#f4f4f4;
+padding:15px;
+border-radius:8px;
+margin-top:20px;
+white-space:pre-wrap;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🎓 Academic Communication Assistant</h1>
+
+<form method="POST">
+
+<label>Communication Type</label>
+<select name="type">
+<option>Notice</option>
+<option>Email</option>
+<option>WhatsApp</option>
+</select>
+
+<label>Purpose</label>
+<input type="text" name="purpose" required>
+
+<label>Audience</label>
+<input type="text" name="audience" required>
+
+<label>Important Points</label>
+<textarea name="points"></textarea>
+
+<button type="submit">Generate Communication</button>
+
+</form>
+
+{% if message %}
+<div class="output">
+<h3>Generated Communication</h3>
+{{message}}
+</div>
+{% endif %}
+
+</div>
+
+</body>
+</html>
